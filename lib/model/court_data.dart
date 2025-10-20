@@ -1,4 +1,6 @@
-class CourtData {
+import 'package:flutter/material.dart';
+
+class CourtData with ChangeNotifier{
   String id;
   String? image;
   String? name;
@@ -10,6 +12,8 @@ class CourtData {
   String? rating;
   String? price;
   String? duration;
+  List<String>? detailImages;
+  bool isFavourite;
 
   CourtData({
     required this.id,
@@ -23,8 +27,16 @@ class CourtData {
     this.rating,
     this.price,
     this.duration,
+    this.detailImages,
+    this.isFavourite = false,
   });
+
+  void statusFav() {
+    isFavourite = !isFavourite;
+    notifyListeners();
+  }
 }
+
 
 var courtList = [
     CourtData(
@@ -39,6 +51,11 @@ var courtList = [
       duration: "/hour",
       openTime: "08:00 - 20:00",
       openDays: "Senin - Minggu",
+      detailImages: [
+        "assets/images/lapangan_1.png",
+        "assets/images/lapangan_1.png",
+        "assets/images/lapangan_1.png",
+      ]
     ),
     CourtData(
       id: "2",
@@ -52,6 +69,11 @@ var courtList = [
       duration: "/hour",
       openTime: "08:00 - 20:00",
       openDays: "Senin - Minggu",
+      detailImages: [
+        "assets/images/lapangan_2.png",
+        "assets/images/lapangan_2.png",
+        "assets/images/lapangan_2.png",
+      ]
     ),
     CourtData(
       id: "3",
@@ -65,6 +87,11 @@ var courtList = [
       duration: "/hour",
       openTime: "08:00 - 20:00",
       openDays: "Senin - Minggu",
+      detailImages: [
+        "assets/images/lapangan_3.png",
+        "assets/images/lapangan_3.png",
+        "assets/images/lapangan_3.png",
+      ]
     ),
     CourtData(
       id: "4",
@@ -78,6 +105,11 @@ var courtList = [
       duration: "/hour",
       openTime: "08:00 - 20:00",
       openDays: "Senin - Minggu",
+      detailImages: [
+        "assets/images/lapangan_4.png",
+        "assets/images/lapangan_4.png",
+        "assets/images/lapangan_4.png",
+      ]
     ),
     CourtData(
       id: "5",
@@ -91,5 +123,10 @@ var courtList = [
       duration: "/hour",
       openTime: "08:00 - 20:00",
       openDays: "Senin - Minggu",
+      detailImages: [
+        "assets/images/lapangan_5.png",
+        "assets/images/lapangan_5.png",
+        "assets/images/lapangan_5.png",
+      ]
     )
   ];
